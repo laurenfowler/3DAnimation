@@ -19,7 +19,7 @@ void display(void){
 	glLoadIdentity();
 	
 	glTranslatef(0.0, 0.0, -1.0);
-	gluLookAt(3.0, 2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
+	gluLookAt(5.0, 2.0, 2.0, 0.0, 0.0, 0.5, 0.0, 0.0, 1.0);
 
 	glEnable(GL_DEPTH_TEST);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);

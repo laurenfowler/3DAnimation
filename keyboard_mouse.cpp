@@ -5,7 +5,7 @@
 void mouse(int button, int state, int x, int y){
 	extern double dx, dy, dz;
 	
-	int new_y = WINDOW_MAX - y;
+	int new_y = WINDOW_HEIGHT - y;
 
 	switch(button){
 		case GLUT_LEFT_BUTTON:

@@ -24,6 +24,8 @@ void display(void){
 	glEnable(GL_DEPTH_TEST);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+	pipeline(&sides[0]);
+
 	drawHouse(&sides[0]);
 	glFlush();
 

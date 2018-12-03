@@ -3,7 +3,6 @@
 
 #include "structs.h"
 
-
 void defineHouse(struct house *side )
 {
 	side[0].point[0].x = -1.0;  // Bottom

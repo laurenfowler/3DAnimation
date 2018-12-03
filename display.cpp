@@ -29,6 +29,7 @@ void display(void){
 	drawHouse(&sides[0]);
 	glFlush();
 
+    glutSwapBuffers();
 
 }
 

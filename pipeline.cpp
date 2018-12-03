@@ -7,11 +7,15 @@ void pipeline(struct house *side){
 	extern double y_spin;
 	extern double z_spin;
 
-	glMatrixMode(GL_MODELVIEW);
-	glLoadIdentity();
+    cout << x_spin << endl;
+    cout << y_spin << endl;
+    cout << z_spin << endl;
 
-	glRotated(x_spin, 1, 0, 0);
-	glRotated(y_spin, 0, 1, 0);
-	glRotated(z_spin, 0, 0, 1);
+	//glMatrixMode(GL_MODELVIEW);
+	//glLoadIdentity();
+
+	glRotated(x_spin, 1.0, 0.0, 0.0); 
+	glRotated(y_spin, 0.0, 1.0, 0.0);
+	glRotated(z_spin, 0.0, 0.0, 1.0);
 
 }

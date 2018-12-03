@@ -19,6 +19,7 @@ int main(int argc, char** argv)
    glutReshapeFunc(reshape);
    glutMouseFunc(mouse);
    glutDisplayFunc(display);
+   glutIdleFunc(spin_house);
    glutMainLoop();
    return 0;
 }

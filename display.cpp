@@ -6,7 +6,7 @@
 #include "prototypes.h"
 
 void display(void){
-	
+	extern double cam_x, cam_y;
 	struct house sides[7];
 	float *M;
 	int i,j;
@@ -20,7 +20,7 @@ void display(void){
 	glLoadIdentity();
 	
 	glTranslatef(0.0, 0.0, -1.0);
-	gluLookAt(5.0, 2.0, 2.0, 0.0, 0.0, 0.5, 0.0, 0.0, 1.0);
+	gluLookAt(cam_x, cam_y, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
 
 	glEnable(GL_DEPTH_TEST);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);

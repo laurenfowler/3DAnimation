@@ -11,4 +11,10 @@
     int menu, axis;
     int DRAWAXIS;
 
+    //camera globals
+    double cam_x = 5.0;
+    double cam_y = 2.0;
+
+    double near_val = 1.5;
+    double far_val = 20.0;
 #endif

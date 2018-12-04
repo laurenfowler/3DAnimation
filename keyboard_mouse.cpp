@@ -49,19 +49,23 @@ void mouse(int button, int state, int x, int y){
 }
 
 void processSpecialKeys(int key, int x, int y){
+    extern double cam_x, cam_y, near_val, far_val;
     switch(key){
         case GLUT_KEY_PAGE_UP:
-            cout << "page up" << endl;
+            cam_x = cam_x - 1.0;
             break;
         case GLUT_KEY_PAGE_DOWN:
-            cout << "page down" << endl;
+            cam_x = cam_x + 1.0;
             break;
     }
+    //reshape(1, 1);
+    glutPostRedisplay();
 }
 
 void keyboard(unsigned char key, int x, int y){
    extern double dx, dy, dz;
    extern double x_spin, y_spin, z_spin;   
+   extern double cam_x, cam_y;
     if(key == 's' || key=='S' ){
         dx = 0.0;
         dy = 0.0;
@@ -77,6 +81,13 @@ void keyboard(unsigned char key, int x, int y){
         x_spin = 0.0;
         y_spin = 0.0;  
         z_spin = 0.0;
+    }
+    if(key == 'R'){
+        cam_x = 5.0;
+        cam_y = 2.0;
+        x_spin = 0.0;
+        y_spin = 0.0;
+        z_spin = 0.0; 
     }
         
 

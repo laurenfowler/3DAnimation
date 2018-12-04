@@ -10,6 +10,8 @@ void pipeline(struct house *side){
 	//glMatrixMode(GL_MODELVIEW);
 	//glLoadIdentity();
 
+    //reshape(1.0, 1.0);
+
 	glRotated(x_spin, 1.0, 0.0, 0.0); 
 	glRotated(y_spin, 0.0, 1.0, 0.0);
 	glRotated(z_spin, 0.0, 0.0, 1.0);

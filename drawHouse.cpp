@@ -60,7 +60,8 @@ void drawAxes(int length)
         glutStrokeCharacter(font, zaxis[i]);
     }
     glPopMatrix();
-// Y - Label
+
+    // Y - Label
     glPushMatrix();
     glTranslatef(0.0, 4, -.4);
     glRotatef(90.0, 0.0, 0.0, 1.0);

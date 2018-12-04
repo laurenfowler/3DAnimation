@@ -25,9 +25,12 @@ void display(void){
 	glEnable(GL_DEPTH_TEST);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+    //wrap in glPush and glPop so axes do not spin with house
+    glPushMatrix();
 	pipeline(&sides[0]);
 
 	drawHouse(&sides[0]);
+    glPopMatrix();
     
     if(DRAWAXIS){
         drawAxes(5);

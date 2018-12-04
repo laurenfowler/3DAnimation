@@ -10,11 +10,11 @@ void mouse(int button, int state, int x, int y){
 	switch(button){
 		case GLUT_LEFT_BUTTON:
 			if(state == GLUT_DOWN){
-				if(x < 250.0 && y > x){
+				if(x < 250.0 && new_y > x){
 					dy = dy + 1.0;
 					spin_house();
 				}
-				else if(x>250 && y>500-x){
+				else if(x>250 && new_y>500-x){
 					dx = dx + 1.0;
 					spin_house();
 				}
@@ -26,11 +26,11 @@ void mouse(int button, int state, int x, int y){
 			break;
 		case GLUT_RIGHT_BUTTON:
 			if(state == GLUT_DOWN){
-				if(x < 250.0 && y > x){
+				if(x < 250.0 && new_y > x){
 					dy = dy - 1.0;
 					spin_house();
 				}
-				else if(x>250 && y>500-x){
+				else if(x>250 && new_y>500-x){
 					dx = dx - 1.0;
 					spin_house();
 				}

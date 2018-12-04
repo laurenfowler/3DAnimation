@@ -63,7 +63,7 @@ void drawAxes(int length)
 
     // Y - Label
     glPushMatrix();
-    glTranslatef(0.0, 4, -.4);
+    glTranslatef(0.0, 3, -.4);
     glRotatef(90.0, 0.0, 0.0, 1.0);
     glRotatef(90.0, 1.0, 0.0, 0.0);
     glScalef(0.002,0.002,0.002);

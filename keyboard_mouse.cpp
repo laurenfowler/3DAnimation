@@ -48,7 +48,38 @@ void mouse(int button, int state, int x, int y){
 
 }
 
+void processSpecialKeys(int key, int x, int y){
+    switch(key){
+        case GLUT_KEY_PAGE_UP:
+            cout << "page up" << endl;
+            break;
+        case GLUT_KEY_PAGE_DOWN:
+            cout << "page down" << endl;
+            break;
+    }
+}
+
 void keyboard(unsigned char key, int x, int y){
+   extern double dx, dy, dz;
+   extern double x_spin, y_spin, z_spin;   
+    if(key == 's' || key=='S' ){
+        dx = 0.0;
+        dy = 0.0;
+        dz = 0.0;
+    }
+    if(key == 'q' || key == 'Q'){
+        exit(0);
+    }
+    if(key == 'r'){
+        dx = 0.0;
+        dy = 0.0;
+        dz = 0.0;
+        x_spin = 0.0;
+        y_spin = 0.0;  
+        z_spin = 0.0;
+    }
+        
+
 
 }
 

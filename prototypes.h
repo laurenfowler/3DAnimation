@@ -16,4 +16,5 @@ void pipeline(struct house*);
 void drawAxes(int length);
 void doNothing(int msg);
 void onAxis(int msg);
+void processSpecialKeys(int key, int x, int y);
 #endif

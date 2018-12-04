@@ -19,6 +19,8 @@ int main(int argc, char** argv)
    glutDisplayFunc(display);
    glutReshapeFunc(reshape);
    glutMouseFunc(mouse);
+   glutSpecialFunc(processSpecialKeys);
+   glutKeyboardFunc(keyboard);
    glutDisplayFunc(display);
    glutIdleFunc(spin_house);
     

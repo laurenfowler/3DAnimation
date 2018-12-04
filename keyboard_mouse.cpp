@@ -11,22 +11,6 @@ void mouse(int button, int state, int x, int y){
 		case GLUT_LEFT_BUTTON:
 			if(state == GLUT_DOWN){
 				if(x < 250.0 && y > x){
-					dy = dy - 1.0;
-					spin_house();
-				}
-				else if(x>250 && y>500-x){
-					dx = dx - 1.0;
-					spin_house();
-				}
-				else{
-					dz = dz - 1.0;
-					spin_house();
-				}
-			}
-			break;
-		case GLUT_RIGHT_BUTTON:
-			if(state == GLUT_DOWN){
-				if(x < 250.0 && y > x){
 					dy = dy + 1.0;
 					spin_house();
 				}
@@ -36,6 +20,22 @@ void mouse(int button, int state, int x, int y){
 				}
 				else{
 					dz = dz + 1.0;
+					spin_house();
+				}
+			}
+			break;
+		case GLUT_RIGHT_BUTTON:
+			if(state == GLUT_DOWN){
+				if(x < 250.0 && y > x){
+					dy = dy - 1.0;
+					spin_house();
+				}
+				else if(x>250 && y>500-x){
+					dx = dx - 1.0;
+					spin_house();
+				}
+				else{
+					dz = dz - 1.0;
 					spin_house();
 				}
 			}
@@ -72,6 +72,18 @@ void spin_house(){
 		z_spin = z_spin - 360.0;
 	}
 	glutPostRedisplay();
-
-
 }
+
+void onAxis(int msg){
+    extern int DRAWAXIS;
+    switch(msg){
+        case 1:
+            DRAWAXIS = 1;
+            break;
+        case 2:
+            DRAWAXIS = 0;
+            break;
+    }
+    glutPostRedisplay();
+}
+

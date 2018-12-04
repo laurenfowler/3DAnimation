@@ -8,5 +8,7 @@
 	double y_spin = 0.0;
 	double z_spin = 0.0;
 	double dx, dy, dz;
+    int menu, axis;
+    int DRAWAXIS;
 
 #endif

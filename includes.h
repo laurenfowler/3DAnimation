@@ -9,4 +9,5 @@
 #include <vector>
 #include <list>
 #include <iterator>
+#include <string.h>
 using namespace std;

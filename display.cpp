@@ -10,6 +10,7 @@ void display(void){
 	struct house sides[7];
 	float *M;
 	int i,j;
+    extern int DRAWAXIS;
 
 	defineHouse(&sides[0]);
 	glClear(GL_COLOR_BUFFER_BIT);
@@ -27,10 +28,17 @@ void display(void){
 	pipeline(&sides[0]);
 
 	drawHouse(&sides[0]);
-	glFlush();
+    
+    if(DRAWAXIS){
+        drawAxes(5);
+    }   
 
+
+	glFlush();
     glutSwapBuffers();
 
 }
+
+
 
 #endif

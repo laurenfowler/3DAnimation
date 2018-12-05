@@ -17,5 +17,8 @@ void drawAxes(int length);
 void doNothing(int msg);
 void onAxis(int msg);
 void onFill(int msg);
+void onOrtho(int msg);
+void onPer(int msg);
+void onCustom(int msg);
 void processSpecialKeys(int key, int x, int y);
 #endif

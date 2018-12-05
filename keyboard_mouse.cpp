@@ -67,6 +67,7 @@ void keyboard(unsigned char key, int x, int y){
    extern double x_spin, y_spin, z_spin;   
    extern double cam_x, cam_y;
    extern int DRAWFILL;
+  extern double near_val, far_val, top, bottom, left, right;
     if(key == 's' || key=='S' ){
         dx = 0.0;
         dy = 0.0;
@@ -93,6 +94,13 @@ void keyboard(unsigned char key, int x, int y){
 		dy = 0.0;
 		dz = 0.0;
 		DRAWFILL = 0;
+		near_val = 1.5;
+		far_val = 20.0;
+		top = 1.0;
+		bottom = -1.0;
+		left = -1.0;
+		right = 1.0;
+	    glutReshapeWindow(500,500);		
     }
         
 
@@ -146,4 +154,83 @@ void onFill(int msg){
 	}
 	glutPostRedisplay();	
 }
+
+void onOrtho(int msg){
+	extern int ORTHOGRAPHIC, PERSPECTIVE, CUSTOM;
+	switch(msg){
+		case 1:
+			ORTHOGRAPHIC = 1;
+			PERSPECTIVE = 0;
+			CUSTOM = 0;
+			break;
+		case 2:
+			ORTHOGRAPHIC = 0;
+			PERSPECTIVE = 0;
+			CUSTOM = 0;
+			break;
+	}
+	glutReshapeWindow(500, 500);
+}
+
+void onPer(int msg){
+	extern int ORTHOGRAPHIC, PERSPECTIVE, CUSTOM;
+	switch(msg){
+		case 1:
+			ORTHOGRAPHIC = 0;
+			PERSPECTIVE = 1;
+			CUSTOM = 0;
+			break;
+		case 2:
+			ORTHOGRAPHIC = 0;
+			PERSPECTIVE = 0;
+			CUSTOM = 0;
+			break;
+	}
+	glutReshapeWindow(500, 500);
+}
+
+void onCustom(int msg){
+	extern int ORTHOGRAPHIC, PERSPECTIVE, CUSTOM;
+	extern double near_val, far_val, top, bottom, left, right;
+	switch(msg){
+		case 1:
+			ORTHOGRAPHIC = 0;
+			PERSPECTIVE = 0;
+			CUSTOM = 1;
+			cout << "near_val = ";
+			cin >> near_val;
+			cout << "far_val = ";
+			cin >> far_val;
+			cout << "top = ";
+			cin >> top;
+			cout << "bottom = ";
+			cin >> bottom;
+			cout << "left = ";
+			cin >> left;
+			cout << "right = ";
+			cin >> right;
+			cout << endl;
+		case 2:
+			ORTHOGRAPHIC = 0;
+			PERSPECTIVE = 0;
+			CUSTOM = 0;
+		//	near_val = 1.5;
+		//	far_val = 20.0;
+		//	top = 1.0;
+		//	bottom = -1.0;
+		//	left = -1.0;
+		//	right = 1.0;
+		}
+		glutReshapeWindow(500, 500);
+}
+
+
+
+
+
+
+
+
+
+
 

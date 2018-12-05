@@ -66,6 +66,7 @@ void keyboard(unsigned char key, int x, int y){
    extern double dx, dy, dz;
    extern double x_spin, y_spin, z_spin;   
    extern double cam_x, cam_y;
+   extern int DRAWFILL;
     if(key == 's' || key=='S' ){
         dx = 0.0;
         dy = 0.0;
@@ -87,7 +88,11 @@ void keyboard(unsigned char key, int x, int y){
         cam_y = 2.0;
         x_spin = 0.0;
         y_spin = 0.0;
-        z_spin = 0.0; 
+        z_spin = 0.0;
+		dx = 0.0;
+		dy = 0.0;
+		dz = 0.0;
+		DRAWFILL = 0;
     }
         
 

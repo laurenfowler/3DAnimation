@@ -10,7 +10,8 @@ void display(void){
 	struct house sides[7];
 	float *M;
 	int i,j;
-    extern int DRAWAXIS;
+    extern int DRAWAXIS, DRAWFILL;
+	GLenum mode = GL_LINE_LOOP;
 
 	defineHouse(&sides[0]);
 	glClear(GL_COLOR_BUFFER_BIT);
@@ -29,7 +30,12 @@ void display(void){
     glPushMatrix();
 	pipeline(&sides[0]);
 
-	drawHouse(&sides[0]);
+	//send proper draw mode
+	if(DRAWFILL){
+		mode = GL_POLYGON;
+	}
+
+	drawHouse(&sides[0], mode);
     glPopMatrix();
     
     if(DRAWAXIS){

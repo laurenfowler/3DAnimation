@@ -129,3 +129,16 @@ void onAxis(int msg){
     glutPostRedisplay();
 }
 
+void onFill(int msg){
+	extern int DRAWFILL;
+	switch(msg){
+		case 1:
+			DRAWFILL = 1;
+			break;
+		case 2:
+			DRAWFILL = 0;
+			break;
+	}
+	glutPostRedisplay();	
+}
+

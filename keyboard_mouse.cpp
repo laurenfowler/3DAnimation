@@ -210,6 +210,7 @@ void onCustom(int msg){
 			cout << "right = ";
 			cin >> right;
 			cout << endl;
+			break;
 		case 2:
 			ORTHOGRAPHIC = 0;
 			PERSPECTIVE = 0;
@@ -220,7 +221,11 @@ void onCustom(int msg){
 		//	bottom = -1.0;
 		//	left = -1.0;
 		//	right = 1.0;
+			break;
+		default:
+			break;
 		}
+	
 		glutReshapeWindow(500, 500);
 }
 

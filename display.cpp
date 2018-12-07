@@ -10,7 +10,7 @@ void display(void){
 	struct house sides[7];
 	float *M;
 	int i,j;
-    extern int DRAWAXIS, DRAWFILL;
+    extern int DRAWAXIS, DRAWFILL, DRAWSIGN;
 	GLenum mode = GL_LINE_LOOP;
 
 	defineHouse(&sides[0]);
@@ -42,6 +42,14 @@ void display(void){
         drawAxes(5);
     }   
 
+    if(DRAWSIGN){
+        string msg = "Hello World";
+        glColor3f(1.0,1.0,1.0);
+        glTranslated(1.0,1.0,1.0);
+        for(int i=0; i<msg.size(); i++){
+            glutStrokeCharacter(GLUT_STROKE_ROMAN, msg[i]);
+        }
+    }
 
 	glFlush();
     glutSwapBuffers();

@@ -8,8 +8,8 @@
 	double y_spin = 0.0;
 	double z_spin = 0.0;
 	double dx, dy, dz;
-    int menu, axis, fill, ortho, custom, perspect;
-    int DRAWAXIS, DRAWFILL, ORTHOGRAPHIC, CUSTOM, PERSPECTIVE;
+    int menu, axis, fill, ortho, custom, perspect, sign;
+    int DRAWAXIS, DRAWFILL, ORTHOGRAPHIC, CUSTOM, PERSPECTIVE, DRAWSIGN;
 
     //camera globals
     double cam_x = 5.0;

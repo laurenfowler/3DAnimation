@@ -155,6 +155,18 @@ void onFill(int msg){
 	glutPostRedisplay();	
 }
 
+void onSign(int msg){
+	extern int DRAWSIGN;
+	switch(msg){
+		case 1:
+			DRAWSIGN = 1;
+			break;
+		case 2:
+			DRAWSIGN = 0;
+			break;
+	}
+	glutPostRedisplay();	
+}
 void onOrtho(int msg){
 	extern int ORTHOGRAPHIC, PERSPECTIVE, CUSTOM;
 	switch(msg){

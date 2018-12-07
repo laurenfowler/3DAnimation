@@ -9,7 +9,7 @@
 
 int main(int argc, char** argv)
 {
-   extern int menu, axis, fill, ortho, custom, perspect;
+   extern int menu, axis, fill, ortho, custom, perspect, sign;
    glutInit(&argc, argv);
    glutInitDisplayMode (GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGB);
    glutInitWindowSize (WINDOW_HEIGHT, WINDOW_WIDTH);
@@ -44,12 +44,17 @@ int main(int argc, char** argv)
    glutAddMenuEntry("On", 1);
    glutAddMenuEntry("Off", 2);
 
+   sign = glutCreateMenu(onSign);
+   glutAddMenuEntry("On", 1);
+   glutAddMenuEntry("Off", 2);
+
    menu = glutCreateMenu(doNothing);
    glutAddSubMenu("Axes", axis);
    glutAddSubMenu("Fill", fill);
    glutAddSubMenu("Orthographic", ortho);
    glutAddSubMenu("Perspective", perspect);
    glutAddSubMenu("Custom", custom);
+   glutAddSubMenu("Sign", sign);
    glutAttachMenu(GLUT_MIDDLE_BUTTON); 
 
   glutMainLoop();
